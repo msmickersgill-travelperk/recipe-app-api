@@ -9,8 +9,6 @@ from django.test import TestCase
 from rest_framework import status
 from rest_framework.test import APIClient
 
-from decimal import Decimal
-
 from core.models import Tag
 
 from recipe.serializers import TagSerializer
@@ -42,7 +40,7 @@ class PublicTagsAPITests(TestCase):
 
 
 class PrivateTagsAPITests(TestCase):
-    """Test authenitcated API requests"""
+    """Test authenticated API requests"""
     def setUp(self):
         self.user = create_user()
         self.client = APIClient()
