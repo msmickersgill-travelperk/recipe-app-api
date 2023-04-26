@@ -29,7 +29,7 @@ class UserAdmin(BaseUserAdmin):
         (_('Important dates'), {'fields': ('last_login',)})
     )
     readonly_fields = ['last_login']
-    add_fields = (
+    add_fieldsets = (
         (None, {
             'classes': ('wide',),               # Way to add custom CSS classes
             'fields': (
@@ -44,4 +44,7 @@ class UserAdmin(BaseUserAdmin):
         }),
     )
 
+
 admin.site.register(models.User, UserAdmin)
+admin.site.register(models.Recipe)
+admin.site.register(models.Tag)
