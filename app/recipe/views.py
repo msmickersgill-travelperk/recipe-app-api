@@ -127,6 +127,7 @@ class BaseRecipeAttrViewSet(mixins.DestroyModelMixin,
             user=self.request.user
         ).order_by('-name').distinct()
 
+
 class TagViewSet(BaseRecipeAttrViewSet):
     """Manage tags in the database"""
     serializer_class = serializers.TagSerializer
